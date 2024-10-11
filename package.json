@@ -7,7 +7,7 @@
     "install-client": "cd client && npm install",
     "install-server": "cd server && npm install",
     "build-client": "npm run build --prefix client",
-    "heroku-postbuild": "concurrently \"npm:install-*\"; concurrently \"npm:build-*\";",
+"heroku-postbuild": "concurrently \"npm:install-*\" \"npm:build-*\" \"npm:start-server\"",
     "start-server": "cd server && npm run dev",
     "start-client": "cd client && npm start",
     "start": "concurrently \"npm run start-server\" \"npm run start-client\""
