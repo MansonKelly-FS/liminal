@@ -1,16 +1,20 @@
 {
   "name": "liminal",
   "version": "1.0.0",
+  "engines": {
+    "node": "21.7.2"
+  },
   "description": "web-based IDE",
   "main": "index.js",
   "scripts": {
-    "install-client": "cd client && npm install",
-    "install-server": "cd server && npm install",
+    "install-client": "npm install --prefix client",
+    "install-server": "npm install --prefix server",
     "build-client": "npm run build --prefix client",
-"heroku-postbuild": "concurrently \"npm:install-*\" \"npm:build-*\" \"npm:start-server\"",
-    "start-server": "cd server && npm run start",
-    "start-client": "cd client && npm start",
-    "start": "concurrently \"npm run start-server\" \"npm run start-client\""
+    "heroku-postbuild": "concurrently \"npm:install-*\" \"npm:build-*\"",
+    "start": "npm start --prefix server", 
+    "dev:react": "concurrently --raw \"npm run server\" \"npm run client\"",
+    "server": "cd server; nodemon server.js", 
+    "client": "cd client && npm run start"
   },
   "author": "kelly manson",
   "license": "ISC",
