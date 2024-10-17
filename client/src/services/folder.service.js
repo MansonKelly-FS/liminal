@@ -6,23 +6,23 @@ import axios from "axios";
       : process.env.REACT_APP_BASE_URL;
 
 const getFolders = async () => {
-  const response = await axios.get(`${API_URL}/folders`);
+  const response = await axios.get(`${API_URL}/api/folders`);
   return response.data;
 };
 
 const getFolderById = async (folderId) => {
-  const response = await axios.get(`${API_URL}/folders/${folderId}`);
+  const response = await axios.get(`${API_URL}/api/folders/${folderId}`);
   return response.data;
 };
 
 const createFolder = async (folderData) => {
-  const response = await axios.post(`${API_URL}/folders`, folderData);
+  const response = await axios.post(`${API_URL}/api/folders`, folderData);
   return response.data;
 };
 
 const updateFolder = async (folderId, folderData) => {
   const response = await axios.put(
-    `${API_URL}/folders/${folderId}`,
+    `${API_URL}/api/folders/${folderId}`,
     folderData
   );
   return response.data;
