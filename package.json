@@ -2,7 +2,8 @@
   "name": "liminal",
   "version": "1.0.0",
   "engines": {
-    "node": "21.7.2"
+    "node": "21.7.2",
+    "npm": "10.9.0"
   },
   "description": "web-based IDE",
   "main": "index.js",
@@ -10,10 +11,10 @@
     "install-client": "npm install --prefix client",
     "install-server": "npm install --prefix server",
     "build-client": "npm run build --prefix client",
-    "heroku-postbuild": "concurrently \"npm:install-*\" \"npm:build-*\"",
-    "start": "npm start --prefix server", 
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "npm start --prefix server",
     "dev:app": "concurrently --raw \"npm run server\" \"npm run client\"",
-    "server": "cd server; nodemon server.js", 
+    "server": "cd server; nodemon server.js",
     "client": "cd client && npm run start"
   },
   "author": "kelly manson",
