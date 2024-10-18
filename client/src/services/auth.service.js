@@ -1,9 +1,6 @@
 import axios from 'axios'; 
 
-  const API_BASE =
-    process.env.NODE_ENV === "development"
-      ? `http://localhost:6060`
-      : process.env.REACT_APP_BASE_URL;
+  const API_BASE = process.env.REACT_APP_BASE_URL;
 const API_URL = '/auth'; 
 
 const signup = (email, password) => {
