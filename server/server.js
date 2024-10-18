@@ -7,7 +7,12 @@ const passport = require("./passport");
 const session = require("express-session");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://liminal-app-862f8c6547ed.herokuapp.com",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
