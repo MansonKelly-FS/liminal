@@ -9,7 +9,7 @@ const session = require("express-session");
 const app = express();
 app.use(
   cors({
-    origin: "https://liminal-app-862f8c6547ed.herokuapp.com",
+    origin: "https://liminal-omega.vercel.app",
     credentials: true,
   })
 );
